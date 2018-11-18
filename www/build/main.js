@@ -55,20 +55,30 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var HomePage = (function () {
-    function HomePage(navCtrl, _http, _loadingCtrl, _alertCrtl) {
+    function HomePage(navCtrl, _http, _loadingCtrl, _alertCtrl) {
         var _this = this;
         this.navCtrl = navCtrl;
         this._http = _http;
         this._loadingCtrl = _loadingCtrl;
-        this._alertCrtl = _alertCrtl;
+        this._alertCtrl = _alertCtrl;
         var loading = this._loadingCtrl.create({
-            content: ' Carregando carros...'
+            content: 'Carregando carros...'
         });
         loading.present();
         this._http.get('http://localhost:8080/api/carro/listaTodosx')
             .subscribe(function (carros) {
             _this.carros = carros;
             loading.dismiss();
+        }, function (err) {
+            console.log(err);
+            loading.dismiss();
+            _this._alertCtrl.create({
+                title: 'Falha na conexão',
+                subTitle: 'Não foi possível carregar a lista de carros, tente novamente mais tarde!',
+                buttons: [
+                    { text: 'Ok' }
+                ]
+            }).present();
         });
     }
     return HomePage;

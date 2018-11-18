@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, LoadingController, AlertController } from 'ionic-angular';
 import { Carro } from '../../modelos/carro';
-import { HttpClient} from '@angular/common/http'; 
+import { HttpClient, HttpResponse, HttpErrorResponse} from '@angular/common/http'; 
 
 @Component({
   selector: 'page-home',
@@ -14,7 +14,7 @@ export class HomePage {
   constructor(public navCtrl: NavController, 
     private _http: HttpClient,
     private _loadingCtrl: LoadingController,
-    private _alertCrtl: AlertController) {
+    private _alertCtrl: AlertController) {
 
       let loading = this._loadingCtrl.create({
         content: 'Carregando carros...'
@@ -27,6 +27,20 @@ export class HomePage {
             (carros) => {
               this.carros = carros;
               loading.dismiss();
+            },
+            (err: HttpErrorResponse) => {
+              console.log(err);
+
+              loading.dismiss();
+
+              this._alertCtrl.create({
+                title: 'Falha na conexão',
+                subTitle: 'Não foi possível carregar a lista de carros, tente novamente mais tarde!',
+                buttons: [
+                  {text: 'Ok' }
+                ]
+              }).present();
+        
             }
           );
   }
