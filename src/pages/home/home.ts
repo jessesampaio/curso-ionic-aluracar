@@ -48,10 +48,11 @@ export class HomePage implements NavLifecycles {
               );
   }
 
-  selecionaCarro(carro: Carro){
+  selecionaCarro(carro: Carro) {
     console.log(carro);
     this.navCtrl.push(EscolhaPage.name, {
       carroSelecionado: carro
     });
   }
+
 }
