@@ -1,18 +1,16 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      AluraCar
+      Aluracar
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <ion-list>
-    <h3>Lista de carros:</h3>
     <ion-item *ngFor="let carro of carros">
       <h2>{{carro.nome}}</h2>
-      <p>R$ {{carro.preco}}</p>
+      <p>R${{carro.preco}}</p>
     </ion-item>
   </ion-list>
-
 </ion-content>
