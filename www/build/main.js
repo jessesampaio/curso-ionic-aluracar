@@ -95,7 +95,9 @@ var HomePage = (function () {
     };
     HomePage.prototype.selecionaCarro = function (carro) {
         console.log(carro);
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__escolha_escolha__["a" /* EscolhaPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__escolha_escolha__["a" /* EscolhaPage */], {
+            carroSelecionado: carro
+        });
     };
     return HomePage;
 }());
@@ -300,6 +302,7 @@ var EscolhaPage = (function () {
     function EscolhaPage(navCtrl, navParams) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
+        this.carro = this.navParams.get('carroSelecionado');
     }
     EscolhaPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad EscolhaPage');
@@ -308,7 +311,7 @@ var EscolhaPage = (function () {
 }());
 EscolhaPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-escolha',template:/*ion-inline-start:"/home/angulodigital/DEV/workspace/workspace-ionic/alura-ionic3/aluracar/src/pages/escolha/escolha.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Escolha</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <h1>PÁGINA ESCOLHA</h1>\n</ion-content>\n'/*ion-inline-end:"/home/angulodigital/DEV/workspace/workspace-ionic/alura-ionic3/aluracar/src/pages/escolha/escolha.html"*/,
+        selector: 'page-escolha',template:/*ion-inline-start:"/home/angulodigital/DEV/workspace/workspace-ionic/alura-ionic3/aluracar/src/pages/escolha/escolha.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Escolha</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-item-group>\n    <ion-item-divider color="light" >\n        VEÍCULO\n      </ion-item-divider>\n      <ion-item>{{ carro.nome }}</ion-item>\n      <ion-item>R$ {{ carro.preco }}</ion-item>      \n  </ion-item-group>\n\n <ion-item-group>\n  <ion-item-divider color="light" >\n    ACESSÓRIOS\n  </ion-item-divider> \n  <ion-item >Acessório 1</ion-item>\n  <ion-item >Acessório 1</ion-item>\n </ion-item-group> \n\n <ion-item-divider color="light" >\n   <samp item-right>TOTAL: R$ 1000</samp>\n  </ion-item-divider>\n\n  <button ion-button block>Avançar</button>\n\n\n</ion-content>\n'/*ion-inline-end:"/home/angulodigital/DEV/workspace/workspace-ionic/alura-ionic3/aluracar/src/pages/escolha/escolha.html"*/,
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
 ], EscolhaPage);

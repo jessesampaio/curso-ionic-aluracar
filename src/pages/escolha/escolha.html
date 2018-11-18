@@ -8,5 +8,28 @@
 
 
 <ion-content padding>
-  <h1>PÁGINA ESCOLHA</h1>
+
+  <ion-item-group>
+    <ion-item-divider color="light" >
+        VEÍCULO
+      </ion-item-divider>
+      <ion-item>{{ carro.nome }}</ion-item>
+      <ion-item>R$ {{ carro.preco }}</ion-item>      
+  </ion-item-group>
+
+ <ion-item-group>
+  <ion-item-divider color="light" >
+    ACESSÓRIOS
+  </ion-item-divider> 
+  <ion-item >Acessório 1</ion-item>
+  <ion-item >Acessório 1</ion-item>
+ </ion-item-group> 
+
+ <ion-item-divider color="light" >
+   <samp item-right>TOTAL: R$ 1000</samp>
+  </ion-item-divider>
+
+  <button ion-button block>Avançar</button>
+
+
 </ion-content>
