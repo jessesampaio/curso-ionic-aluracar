@@ -10,16 +10,17 @@ import { Carro } from '../../modelos/carro';
 export class EscolhaPage {
 
   public carro: Carro;
+  public acessorios: [];
 
   constructor(public navCtrl: NavController, 
     public navParams: NavParams) {
 
       this.carro = this.navParams.get('carroSelecionado');
-            
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EscolhaPage');
+      this.acessorios = [
+        { nome: 'Freios ABS', preco: 800 },
+        { nome: 'Ar-condicionado', preco: 1000 },
+        { nome: 'MP3 Player', preco: 500 }
+      ];
   }
 
 }

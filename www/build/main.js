@@ -299,15 +299,17 @@ var EscolhaPage = (function () {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.carro = this.navParams.get('carroSelecionado');
+        this.acessorios = [
+            { nome: 'Freios ABS', preco: 800 },
+            { nome: 'Ar-condicionado', preco: 1000 },
+            { nome: 'MP3 Player', preco: 500 }
+        ];
     }
-    EscolhaPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad EscolhaPage');
-    };
     return EscolhaPage;
 }());
 EscolhaPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-escolha',template:/*ion-inline-start:"/home/angulodigital/DEV/workspace/workspace-ionic/alura-ionic3/aluracar/src/pages/escolha/escolha.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Escolha</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n\n  <ion-slides pager="true">\n  <ion-slide *ngFor="let foto of carro.fotos">\n      <img src="{{foto}}" /> \n  </ion-slide>\n\n  </ion-slides>\n\n  <ion-item-group>\n    <ion-item-divider color="light" >\n      <ion-icon name="car" ></ion-icon>\n        VEÍCULO\n      </ion-item-divider>\n      <ion-item>{{ carro.nome }}</ion-item>\n      <ion-item>R$ {{ carro.preco }}</ion-item>      \n  </ion-item-group>\n\n <ion-item-group>\n  <ion-item-divider color="light" >\n    <ion-icon name="options" ></ion-icon>\n    ACESSÓRIOS\n  </ion-item-divider> \n  <ion-item >Acessório 1</ion-item>\n  <ion-item >Acessório 2</ion-item>\n </ion-item-group> \n\n <ion-item-divider color="light" >\n   <samp item-right>TOTAL: R$ 1000</samp>\n  </ion-item-divider>\n\n  <ion-fab top right edge>\n    <button ion-fab >\n      <ion-icon name="arrow-dropright"></ion-icon>\n    </button>\n  </ion-fab>\n\n  \n\n\n</ion-content>\n'/*ion-inline-end:"/home/angulodigital/DEV/workspace/workspace-ionic/alura-ionic3/aluracar/src/pages/escolha/escolha.html"*/,
+        selector: 'page-escolha',template:/*ion-inline-start:"/home/angulodigital/DEV/workspace/workspace-ionic/alura-ionic3/aluracar/src/pages/escolha/escolha.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Escolha</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n\n  <ion-slides pager="true">\n  <ion-slide *ngFor="let foto of carro.fotos">\n      <img src="{{foto}}" /> \n  </ion-slide>\n\n  </ion-slides>\n\n  <ion-item-group>\n    <ion-item-divider color="light" >\n      <ion-icon name="car" ></ion-icon>\n        VEÍCULO\n      </ion-item-divider>\n      <ion-item>{{ carro.nome }}</ion-item>\n      <ion-item>R$ {{ carro.preco }}</ion-item>      \n  </ion-item-group>\n\n <ion-item-group>\n  <ion-item-divider color="light" >\n    <ion-icon name="options" ></ion-icon>\n    ACESSÓRIOS\n  </ion-item-divider> \n  <ion-item *ngFor="let acessorio of acessorios">\n    <ion-label>\n      <h2>{{ acessorio.nome }}</h2>\n      <h4>{{ acessorio.preco }}</h4>\n    </ion-label>\n\n    <ion-toggle color="secondary" ></ion-toggle>\n  </ion-item>\n </ion-item-group> \n\n <ion-item-divider color="light" >\n   <samp item-right>TOTAL: R$ 1000</samp>\n  </ion-item-divider>\n\n  <ion-fab top right edge>\n    <button ion-fab >\n      <ion-icon name="arrow-dropright"></ion-icon>\n    </button>\n  </ion-fab>\n\n  \n\n\n</ion-content>\n'/*ion-inline-end:"/home/angulodigital/DEV/workspace/workspace-ionic/alura-ionic3/aluracar/src/pages/escolha/escolha.html"*/,
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
 ], EscolhaPage);
