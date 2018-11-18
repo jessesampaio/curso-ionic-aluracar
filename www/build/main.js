@@ -95,7 +95,7 @@ var HomePage = (function () {
     };
     HomePage.prototype.selecionaCarro = function (carro) {
         console.log(carro);
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__escolha_escolha__["a" /* EscolhaPage */], {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_3__escolha_escolha__["a" /* EscolhaPage */].name, {
             carroSelecionado: carro
         });
     };
@@ -177,14 +177,12 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(194);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__angular_common_http__ = __webpack_require__(196);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__providers_carros_service_carros_service__ = __webpack_require__(195);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_escolha_escolha__ = __webpack_require__(269);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -203,8 +201,7 @@ AppModule = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["L" /* NgModule */])({
         declarations: [
             __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_9__pages_escolha_escolha__["a" /* EscolhaPage */]
+            __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -218,8 +215,7 @@ AppModule = __decorate([
         bootstrap: [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["b" /* IonicApp */]],
         entryComponents: [
             __WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */],
-            __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */],
-            __WEBPACK_IMPORTED_MODULE_9__pages_escolha_escolha__["a" /* EscolhaPage */]
+            __WEBPACK_IMPORTED_MODULE_6__pages_home_home__["a" /* HomePage */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
@@ -311,7 +307,7 @@ var EscolhaPage = (function () {
 }());
 EscolhaPage = __decorate([
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-        selector: 'page-escolha',template:/*ion-inline-start:"/home/angulodigital/DEV/workspace/workspace-ionic/alura-ionic3/aluracar/src/pages/escolha/escolha.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Escolha</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n  <ion-slides pager="true">\n  <ion-slide *ngFor="let foto of carro.fotos">\n      <img src="{{foto}}" /> \n  </ion-slide>\n\n  </ion-slides>\n\n  <ion-item-group>\n    <ion-item-divider color="light" >\n      <ion-icon name="car" ></ion-icon>\n        VEÍCULO\n      </ion-item-divider>\n      <ion-item>{{ carro.nome }}</ion-item>\n      <ion-item>R$ {{ carro.preco }}</ion-item>      \n  </ion-item-group>\n\n <ion-item-group>\n  <ion-item-divider color="light" >\n    <ion-icon name="options" ></ion-icon>\n    ACESSÓRIOS\n  </ion-item-divider> \n  <ion-item >Acessório 1</ion-item>\n  <ion-item >Acessório 2</ion-item>\n </ion-item-group> \n\n <ion-item-divider color="light" >\n   <samp item-right>TOTAL: R$ 1000</samp>\n  </ion-item-divider>\n\n  <ion-fab top right edge>\n    <button ion-fab >\n      <ion-icon name="arrow-dropright"></ion-icon>\n    </button>\n  </ion-fab>\n\n  \n\n\n</ion-content>\n'/*ion-inline-end:"/home/angulodigital/DEV/workspace/workspace-ionic/alura-ionic3/aluracar/src/pages/escolha/escolha.html"*/,
+        selector: 'page-escolha',template:/*ion-inline-start:"/home/angulodigital/DEV/workspace/workspace-ionic/alura-ionic3/aluracar/src/pages/escolha/escolha.html"*/'<ion-header>\n\n  <ion-navbar>\n    <ion-title>Escolha</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n<ion-content padding>\n\n  <ion-slides pager="true">\n  <ion-slide *ngFor="let foto of carro.fotos">\n      <img src="{{foto}}" /> \n  </ion-slide>\n\n  </ion-slides>\n\n  <ion-item-group>\n    <ion-item-divider color="light" >\n      <ion-icon name="car" ></ion-icon>\n        VEÍCULO\n      </ion-item-divider>\n      <ion-item>{{ carro.nome }}</ion-item>\n      <ion-item>R$ {{ carro.preco }}</ion-item>      \n  </ion-item-group>\n\n <ion-item-group>\n  <ion-item-divider color="light" >\n    <ion-icon name="options" ></ion-icon>\n    ACESSÓRIOS\n  </ion-item-divider> \n  <ion-item >Acessório 1</ion-item>\n  <ion-item >Acessório 2</ion-item>\n </ion-item-group> \n\n <ion-item-divider color="light" >\n   <samp item-right>TOTAL: R$ 1000</samp>\n  </ion-item-divider>\n\n  <ion-fab top right edge>\n    <button ion-fab >\n      <ion-icon name="arrow-dropright"></ion-icon>\n    </button>\n  </ion-fab>\n\n  \n\n\n</ion-content>\n'/*ion-inline-end:"/home/angulodigital/DEV/workspace/workspace-ionic/alura-ionic3/aluracar/src/pages/escolha/escolha.html"*/,
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavParams */]) === "function" && _b || Object])
 ], EscolhaPage);
